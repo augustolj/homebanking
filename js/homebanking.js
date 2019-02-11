@@ -30,9 +30,11 @@ function restarDinero(a) {
 function cambiarLimiteDeExtraccion() {
   var consultaInternaLimite = limiteExtraccion;
   var nuevoLimite = parseInt(prompt("Cual es el nuevo límite de extracción?"));
-  limiteExtraccion = nuevoLimite;
-  actualizarLimiteEnPantalla();
-  alert("El límite de extracción era " + consultaInternaLimite + " y lo has cambiado a " + nuevoLimite);
+    if (!isNaN(nuevoLimite)) {
+      limiteExtraccion = nuevoLimite;
+      actualizarLimiteEnPantalla();
+      alert("El límite de extracción era " + consultaInternaLimite + " y lo has cambiado a " + nuevoLimite);
+    } else alert("El valor ingresado no es numérico");
 }
 
 function extraerDinero() {
